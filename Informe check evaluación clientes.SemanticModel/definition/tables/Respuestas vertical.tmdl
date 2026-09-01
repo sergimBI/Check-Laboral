@@ -58,8 +58,12 @@ table 'Respuestas vertical'
 				    ExpandidoCatalogo = Table.ExpandTableColumn(UnidoCatalogo, "Catalogo", {"Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta"}, {"Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta catalogada"}),
 				    PreguntaCanonica = Table.AddColumn(ExpandidoCatalogo, "Pregunta", each if [Pregunta catalogada] = null then [Pregunta origen] else [Pregunta catalogada], type text),
 				    Resultado = Table.SelectColumns(PreguntaCanonica, {"Id", "Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta", "Respuesta"}),
-				    TipoCambiado = Table.TransformColumnTypes(Resultado, {{"Id", Int64.Type}, {"Orden_bloque", Int64.Type}, {"Bloque", type text}, {"Orden_pregunta", Int64.Type}, {"Pregunta", type text}, {"Respuesta", type text}})
+				    TipoCambiado = Table.TransformColumnTypes(Resultado, {{"Id", Int64.Type}, {"Orden_bloque", Int64.Type}, {"Bloque", type text}, {"Orden_pregunta", Int64.Type}, {"Pregunta", type text}, {"Respuesta", type text}}),
+				    #"Filas ordenadas" = Table.Sort(TipoCambiado,{{"Id", Order.Ascending}, {"Orden_bloque", Order.Ascending}, {"Orden_pregunta", Order.Ascending}})
 				in
-				    TipoCambiado
+				    #"Filas ordenadas"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+
