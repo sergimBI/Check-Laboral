@@ -1,0 +1,65 @@
+table 'Respuestas vertical'
+	lineageTag: 21b7bfef-9feb-4b14-a8b7-98340b1e98dc
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 950ebd2c-4a0a-46ec-a9ca-a146b8efc1ad
+		summarizeBy: none
+		sourceColumn: Id
+
+	column Orden_bloque
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f6f4c49-5d0f-46ae-9f39-33be4d833786
+		summarizeBy: none
+		sourceColumn: Orden_bloque
+
+	column Bloque
+		dataType: string
+		lineageTag: fb8df3b6-8581-47b8-8faf-4bbb203ef645
+		summarizeBy: none
+		sourceColumn: Bloque
+		sortByColumn: Orden_bloque
+
+	column Orden_pregunta
+		dataType: int64
+		formatString: 0
+		lineageTag: efd9d587-5e13-47e2-a0db-7ca0af7cdcc1
+		summarizeBy: none
+		sourceColumn: Orden_pregunta
+
+	column Pregunta
+		dataType: string
+		lineageTag: d85c33b8-0ef1-4c80-bbb1-a0132de0bfe5
+		summarizeBy: none
+		sourceColumn: Pregunta
+		sortByColumn: Orden_pregunta
+
+	column Respuesta
+		dataType: string
+		lineageTag: 5a8aec07-884f-46d4-ae01-67157da43f8a
+		summarizeBy: none
+		sourceColumn: Respuesta
+
+	partition 'Respuestas vertical' = m
+		mode: import
+		source =
+				let
+				    Fuente = #"Respuestas formulario",
+				    Despivotada = Table.UnpivotOtherColumns(Fuente, {"Id"}, "CampoOrigen", "Respuesta"),
+				    SoloPreguntasConRespuesta = Table.SelectRows(Despivotada, each Text.Contains([CampoOrigen], "¿") and [Respuesta] <> null and Text.Trim(Text.From([Respuesta])) <> ""),
+				    fnTextoPregunta = (texto as text) as text => Text.Trim(Text.Range(texto, Text.PositionOf(texto, "¿", Occurrence.Last))),
+				    fnClavePregunta = (texto as text) as text => Text.Lower(Text.Remove(Text.Clean(Text.Replace(texto, Character.FromNumber(160), " ")), {" ", Character.FromNumber(8239)})),
+				    ConPreguntaOrigen = Table.AddColumn(SoloPreguntasConRespuesta, "Pregunta origen", each fnTextoPregunta([CampoOrigen]), type text),
+				    ConClave = Table.AddColumn(ConPreguntaOrigen, "ClavePregunta", each fnClavePregunta([Pregunta origen]), type text),
+				    CatalogoConClave = Table.AddColumn(#"Datos preguntas", "ClavePregunta", each fnClavePregunta([Pregunta]), type text),
+				    UnidoCatalogo = Table.NestedJoin(ConClave, {"ClavePregunta"}, CatalogoConClave, {"ClavePregunta"}, "Catalogo", JoinKind.LeftOuter),
+				    ExpandidoCatalogo = Table.ExpandTableColumn(UnidoCatalogo, "Catalogo", {"Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta"}, {"Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta catalogada"}),
+				    PreguntaCanonica = Table.AddColumn(ExpandidoCatalogo, "Pregunta", each if [Pregunta catalogada] = null then [Pregunta origen] else [Pregunta catalogada], type text),
+				    Resultado = Table.SelectColumns(PreguntaCanonica, {"Id", "Orden_bloque", "Bloque", "Orden_pregunta", "Pregunta", "Respuesta"}),
+				    TipoCambiado = Table.TransformColumnTypes(Resultado, {{"Id", Int64.Type}, {"Orden_bloque", Int64.Type}, {"Bloque", type text}, {"Orden_pregunta", Int64.Type}, {"Pregunta", type text}, {"Respuesta", type text}})
+				in
+				    TipoCambiado
+
+	annotation PBI_ResultType = Table
