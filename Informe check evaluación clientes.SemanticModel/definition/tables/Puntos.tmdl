@@ -1,0 +1,35 @@
+table Puntos
+	lineageTag: 8377d818-a305-4a07-84cb-7d01fa6701b6
+
+	column Respuesta
+		dataType: string
+		lineageTag: c2accc99-8701-42dd-b786-6725a604b5c4
+		summarizeBy: none
+		sourceColumn: Respuesta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Puntos
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dc36d0d-9be6-4cdd-bf5e-39a578f6edab
+		summarizeBy: sum
+		sourceColumn: Puntos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Puntos = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wci7NLcjJTMlX0lEyUIrViVbyy1dIRogZKsXGAgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Respuesta = _t, Puntos = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Respuesta", type text}, {"Puntos", Int64.Type}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Tipo cambiado","Cumplido","Sí",Replacer.ReplaceText,{"Respuesta"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","No cumplido","No",Replacer.ReplaceText,{"Respuesta"})
+				in
+				    #"Valor reemplazado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

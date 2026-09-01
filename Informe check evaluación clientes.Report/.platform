@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Informe check evaluación clientes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "920aa005-eb51-4477-a477-48fa89c85125"
+  }
+}

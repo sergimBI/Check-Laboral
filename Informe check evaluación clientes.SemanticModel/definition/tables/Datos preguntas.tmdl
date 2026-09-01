@@ -1,0 +1,72 @@
+table 'Datos preguntas'
+	lineageTag: edb07cce-0cbf-4864-afd6-63fa8b7c5a40
+
+	column Orden_bloque
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d6d54b8-2a2b-49d4-b037-9a15cac1e1db
+		summarizeBy: sum
+		sourceColumn: Orden_bloque
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bloque
+		dataType: string
+		lineageTag: dfc2c754-82ae-48d0-bec3-0302e36a599e
+		summarizeBy: none
+		sourceColumn: Bloque
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden_pregunta
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bf7fe11-f46e-4358-95e3-4b771fed9598
+		summarizeBy: sum
+		sourceColumn: Orden_pregunta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pregunta
+		dataType: string
+		lineageTag: ea83268a-378a-432d-909b-9cf088eb4361
+		summarizeBy: none
+		sourceColumn: Pregunta
+
+		annotation SummarizationSetBy = Automatic
+
+	column '<50 emp'
+		dataType: string
+		lineageTag: 777bfef2-9729-44ac-93b5-31841bae2678
+		summarizeBy: none
+		sourceColumn: <50 emp
+
+		annotation SummarizationSetBy = Automatic
+
+	column '>=50 emp'
+		dataType: string
+		lineageTag: 16f53c23-5498-4da4-b378-7471562b8415
+		summarizeBy: none
+		sourceColumn: >=50 emp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Condición
+		dataType: string
+		lineageTag: 65e7dbb9-bce9-4399-90e3-0e20cf4be5b4
+		summarizeBy: none
+		sourceColumn: Condición
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Datos preguntas' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Orden_bloque = _t, Bloque = _t, Orden_pregunta = _t, Pregunta = _t, #"<50 emp" = _t, #">=50 emp" = _t, Condición = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Orden_bloque", Int64.Type}, {"Bloque", type text}, {"Orden_pregunta", Int64.Type}, {"Pregunta", type text}, {"<50 emp", type text}, {">=50 emp", type text}, {"Condición", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Informe check evaluación clientes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c6caaccb-eb5d-423f-a64e-48ce333a1254"
+  }
+}

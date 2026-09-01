@@ -1,0 +1,277 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.columna_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Columna1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "columna 1": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Columna1": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.índice_de_riesgo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Índice de riesgo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "índice de riesgo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Riesgo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida.puntos_obtenidos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Puntos obtenidos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "puntos obtenidos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.puntos_máximos_aplicables": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Puntos máximos aplicables"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "puntos máximos aplicables": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_mostrado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado mostrado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado mostrado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "punto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Puntos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "punto": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        }
+			      ]
+			    },
+			    "punto.respuesta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Puntos",
+			          "ConceptualProperty": "Respuesta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "respuesta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "punto.punto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Puntos",
+			          "ConceptualProperty": "Puntos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "punto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "punto_has_punto": {
+			      "Binding": {
+			        "ConceptualEntity": "Puntos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "punto": {
+			          "Target": {
+			            "Entity": "punto"
+			          }
+			        },
+			        "punto.punto": {
+			          "Target": {
+			            "Entity": "punto.punto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "punto"
+			            },
+			            "Object": {
+			              "Role": "punto.punto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "puntos_have_puntos"
+			        }
+			      ]
+			    },
+			    "punto_has_respuesta": {
+			      "Binding": {
+			        "ConceptualEntity": "Puntos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "punto": {
+			          "Target": {
+			            "Entity": "punto"
+			          }
+			        },
+			        "punto.respuesta": {
+			          "Target": {
+			            "Entity": "punto.respuesta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "punto"
+			            },
+			            "Object": {
+			              "Role": "punto.respuesta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "puntos_have_respuestas"
+			        }
+			      ]
+			    },
+			    "medida_has_columna_1": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.columna_1": {
+			          "Target": {
+			            "Entity": "medida.columna_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.columna_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_columna_1"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

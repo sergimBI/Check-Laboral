@@ -1,0 +1,24 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ca-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Medidas","Puntos","Respuestas formulario","Datos preguntas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Medidas
+ref table Puntos
+ref table 'Respuestas formulario'
+ref table DateTableTemplate_6c2ea94b-4980-45a4-a590-93d93f4b39bf
+ref table LocalDateTable_f8797aad-9228-45b7-8b31-4dc8a12e8297
+ref table LocalDateTable_a2597404-969f-4dd1-a94a-a6e096635b79
+ref table 'Datos preguntas'
+
+ref cultureInfo es-ES
+

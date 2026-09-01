@@ -1,0 +1,10 @@
+relationship 9e75fd18-07cf-44d2-813f-798e2ddda338
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Respuestas formulario'.'Hora d''inici'
+	toColumn: LocalDateTable_f8797aad-9228-45b7-8b31-4dc8a12e8297.Date
+
+relationship 365dbb5a-a441-4aa2-bce8-d0003634a209
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Respuestas formulario'.'Hora de finalització'
+	toColumn: LocalDateTable_a2597404-969f-4dd1-a94a-a6e096635b79.Date
+
