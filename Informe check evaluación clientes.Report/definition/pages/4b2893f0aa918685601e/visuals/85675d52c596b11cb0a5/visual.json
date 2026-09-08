@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Respuestas formulario"
+                      "Entity": "OfficeForms Table"
                     }
                   },
                   "Property": "Compañía"
                 }
               },
-              "queryRef": "Respuestas formulario.Compañía",
-              "nativeQueryRef": "Compañía1",
+              "queryRef": "OfficeForms Table.Compañía",
+              "nativeQueryRef": "Compañía",
               "active": true
             }
           ]
@@ -63,8 +63,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "r",
-                    "Entity": "Respuestas formulario",
+                    "Name": "o",
+                    "Entity": "OfficeForms Table",
                     "Type": 0
                   }
                 ],
@@ -77,7 +77,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "r"
+                                  "Source": "o"
                                 }
                               },
                               "Property": "Compañía"
@@ -88,7 +88,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Bove Montero'"
+                                "Value": "'Companyia 3'"
                               }
                             }
                           ]
