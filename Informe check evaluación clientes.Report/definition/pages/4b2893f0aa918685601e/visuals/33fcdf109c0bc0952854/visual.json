@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "33fcdf109c0bc0952854",
   "position": {
-    "x": 552.41379310344826,
-    "y": 86.896551724137936,
+    "x": 600.1697312588401,
+    "y": 86.9024045261669,
     "z": 8000,
-    "height": 555.07389162561572,
-    "width": 714.67980295566508,
+    "height": 554.9080622347949,
+    "width": 667.1570014144271,
     "tabOrder": 8000
   },
   "visual": {
@@ -20,28 +20,27 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Orden_bloques"
+                      "Entity": "Respuestas vertical"
                     }
                   },
-                  "Property": "Orden"
+                  "Property": "Orden_bloque"
                 }
               },
-              "queryRef": "Orden_bloques.Orden",
-              "nativeQueryRef": "Bloque",
-              "displayName": "Bloque"
+              "queryRef": "Respuestas vertical.Orden_bloque",
+              "nativeQueryRef": "Orden_bloque"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Detall_Preguntes"
+                      "Entity": "Respuestas vertical"
                     }
                   },
                   "Property": "Pregunta"
                 }
               },
-              "queryRef": "Detall_Preguntes.Pregunta",
+              "queryRef": "Respuestas vertical.Pregunta",
               "nativeQueryRef": "Pregunta"
             },
             {
@@ -49,34 +48,17 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Detall_Preguntes"
+                      "Entity": "Respuestas vertical"
                     }
                   },
                   "Property": "Respuesta"
                 }
               },
-              "queryRef": "Detall_Preguntes.Respuesta",
-              "nativeQueryRef": "Primera fecha: Respuesta1"
+              "queryRef": "Respuestas vertical.Respuesta",
+              "nativeQueryRef": "Respuesta"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Orden_bloques"
-                  }
-                },
-                "Property": "Orden"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -90,265 +72,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Detall_Preguntes"
-                                        }
-                                      },
-                                      "Property": "Respuesta"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'No cumplido'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#FFFFFF'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Detall_Preguntes"
-                                        }
-                                      },
-                                      "Property": "Respuesta"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Cumplido'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#10A100'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Detall_Preguntes"
-                                        }
-                                      },
-                                      "Property": "Respuesta"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'No cumplido'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a1343c'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Detall_Preguntes"
-                                        }
-                                      },
-                                      "Property": "Respuesta"
-                                    }
-                                  },
-                                  "Function": 3
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Cumplido'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#FFFFFF'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Detall_Preguntes.Respuesta"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Aggregation": {
-                          "Expression": {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Orden_bloques"
-                                }
-                              },
-                              "Property": "Orden"
-                            }
-                          },
-                          "Function": 0
-                        }
-                      },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#a0d1ff'"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#efb5b9'"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'noColor'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Orden_bloques.Orden"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Detall_Preguntes.Pregunta"
           }
         }
       ],
@@ -377,34 +100,6 @@
           "properties": {}
         }
       ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "562.2494727322418D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Detall_Preguntes.Pregunta"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "Detall_Preguntes.Respuesta"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "Orden_bloques.Orden"
-          }
-        }
-      ],
       "total": [
         {
           "properties": {
@@ -415,6 +110,50 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "52.30541966161255D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Respuestas vertical.Orden_bloque"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "524.5785030845869D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Respuestas vertical.Pregunta"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "67.71570014144271D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Respuestas vertical.Respuesta"
           }
         }
       ]

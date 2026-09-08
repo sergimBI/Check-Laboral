@@ -5,7 +5,7 @@ table 'Datos preguntas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 4d6d54b8-2a2b-49d4-b037-9a15cac1e1db
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Orden_bloque
 
 		annotation SummarizationSetBy = Automatic
@@ -22,7 +22,7 @@ table 'Datos preguntas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 7bf7fe11-f46e-4358-95e3-4b771fed9598
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Orden_pregunta
 
 		annotation SummarizationSetBy = Automatic

@@ -12,21 +12,21 @@ table Medidas
 		formatString: 0\ %;-0\ %;0\ %
 		lineageTag: 506ef6be-9091-45ba-a876-c06fc21663ca
 
-	measure 'Puntos obtenidos' =
+	measure 'Puntos obtenidos' = ```
 			
-			COALESCE (
-			    SUM ( 'Detall_Preguntes'[Puntos] ),
-			    0
-			)
-		formatString: 0
+			    COALESCE (
+			        SUM ( 'Respuestas vertical'[Respuesta] = "No" ),
+			        0
+			    )
+			```
 		lineageTag: 9ab17131-08fd-40f4-9132-cc59b7b512ef
 
 	measure 'Puntos máximos aplicables' =
 			
 			CALCULATE (
-			    COUNTROWS ( 'Detall_Preguntes' ),
-			    'Detall_Preguntes'[Aplicabilidad] = "Aplica",
-			    NOT ISBLANK ( 'Detall_Preguntes'[Respuesta] )
+			    COUNTROWS ( 'Respuestas vertical' ),
+			    'Respuestas vertical'[Respuesta] = "Sí" || 'Respuestas vertical'[Respuesta] = "No",
+			    NOT ISBLANK ( 'Respuestas vertical'[Respuesta] )
 			)
 		formatString: 0
 		lineageTag: ca72f5ec-9747-4845-911c-791d2148748d

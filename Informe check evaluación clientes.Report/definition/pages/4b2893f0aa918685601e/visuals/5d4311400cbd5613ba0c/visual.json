@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "5d4311400cbd5613ba0c",
   "position": {
-    "x": 552.41379310344826,
-    "y": 658.81773399014776,
+    "x": 600.1697312588401,
+    "y": 659.009900990099,
     "z": 2000,
-    "height": 42.5615763546798,
-    "width": 714.67980295566508,
+    "height": 42.545968882602544,
+    "width": 667.1570014144271,
     "tabOrder": 1000
   },
   "visual": {
@@ -22,36 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "OfficeForms Table"
+                          "Entity": "Respuestas formulario"
                         }
                       },
-                      "Property": "Persona de contacto"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(OfficeForms Table.Persona de contacto)",
-              "nativeQueryRef": "Persona de contacto"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "OfficeForms Table"
-                        }
-                      },
-                      "Property": "Email"
+                      "Property": "Nombre de la persona de contacto"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(OfficeForms Table.Email)",
-              "nativeQueryRef": "Primera fecha: Email"
+              "queryRef": "Min(Respuestas formulario.Nombre de la persona de contacto)",
+              "nativeQueryRef": "Primera fecha: Nombre de la persona de contacto"
             },
             {
               "field": {
@@ -60,7 +41,26 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "OfficeForms Table"
+                          "Entity": "Respuestas formulario"
+                        }
+                      },
+                      "Property": "Email de contacto"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Respuestas formulario.Email de contacto)",
+              "nativeQueryRef": "Primera fecha: Email de contacto"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Respuestas formulario"
                         }
                       },
                       "Property": "Hora de finalització"
@@ -69,8 +69,8 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(OfficeForms Table.Hora de finalització)",
-              "nativeQueryRef": "Primera fecha: Hora de finalització"
+              "queryRef": "Min(Respuestas formulario.Hora de finalització)",
+              "nativeQueryRef": "Primera fecha: Hora de finalització1"
             }
           ]
         }
@@ -84,13 +84,13 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "OfficeForms Table"
+                        "Entity": "Respuestas formulario"
                       }
                     },
-                    "Property": "Persona de contacto"
+                    "Property": "Nombre de la persona de contacto"
                   }
                 },
-                "Function": 4
+                "Function": 3
               }
             },
             "direction": "Ascending"
@@ -328,20 +328,6 @@
         }
       ],
       "shapeCustomRectangle": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'rectangle'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(OfficeForms Table.Email)"
-          }
-        },
         {
           "properties": {
             "tileShape": {

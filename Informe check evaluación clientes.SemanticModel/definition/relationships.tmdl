@@ -8,3 +8,15 @@ relationship 365dbb5a-a441-4aa2-bce8-d0003634a209
 	fromColumn: 'Respuestas formulario'.'Hora de finalització'
 	toColumn: LocalDateTable_a2597404-969f-4dd1-a94a-a6e096635b79.Date
 
+relationship 4b21f9c7-9bc6-90f5-e6d5-c4398f23f490
+	fromColumn: 'Respuestas vertical'.Respuesta
+	toColumn: Puntos.Respuesta
+
+relationship 4458ec7d-2bf3-24c5-db39-2d492244c3dd
+	fromColumn: 'Respuestas vertical'.Pregunta
+	toColumn: 'Datos preguntas'.Pregunta
+
+relationship 0b20a3c3-22cb-bd37-030d-81da3cd8d622
+	fromColumn: 'Respuestas vertical'.Id
+	toColumn: 'Respuestas formulario'.Id
+

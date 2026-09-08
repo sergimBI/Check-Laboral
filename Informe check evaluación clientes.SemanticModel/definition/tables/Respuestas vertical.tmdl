@@ -8,12 +8,16 @@ table 'Respuestas vertical'
 		summarizeBy: none
 		sourceColumn: Id
 
+		annotation SummarizationSetBy = Automatic
+
 	column Orden_bloque
 		dataType: int64
 		formatString: 0
 		lineageTag: 6f6f4c49-5d0f-46ae-9f39-33be4d833786
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Orden_bloque
+
+		annotation SummarizationSetBy = Automatic
 
 	column Bloque
 		dataType: string
@@ -26,8 +30,10 @@ table 'Respuestas vertical'
 		dataType: int64
 		formatString: 0
 		lineageTag: efd9d587-5e13-47e2-a0db-7ca0af7cdcc1
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Orden_pregunta
+
+		annotation SummarizationSetBy = Automatic
 
 	column Pregunta
 		dataType: string

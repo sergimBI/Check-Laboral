@@ -13,7 +13,7 @@ table Puntos
 		dataType: int64
 		formatString: 0
 		lineageTag: 8dc36d0d-9be6-4cdd-bf5e-39a578f6edab
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Puntos
 
 		annotation SummarizationSetBy = Automatic

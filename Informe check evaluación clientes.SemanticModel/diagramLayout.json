@@ -10,7 +10,7 @@
       "nodes": [
         {
           "location": {
-            "x": 811.06898792051811,
+            "x": 1031.0476179608206,
             "y": 0
           },
           "nodeIndex": "Medidas",
@@ -19,11 +19,11 @@
             "height": 404.5,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 533,
+            "x": 687.61355139975535,
             "y": 0
           },
           "nodeIndex": "Puntos",
@@ -32,11 +32,11 @@
             "height": 254,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 263,
+            "x": 319.56593343893491,
             "y": 0
           },
           "nodeIndex": "Datos preguntas",
@@ -45,7 +45,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 3
         },
         {
           "location": {
@@ -57,7 +57,20 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 360.96887395745188,
+            "y": 359.50793252300855
+          },
+          "nodeIndex": "Respuestas vertical",
+          "nodeLineageTag": "21b7bfef-9feb-4b14-a8b7-98340b1e98dc",
+          "size": {
+            "height": 320.79059721773308,
+            "width": 234
+          },
+          "zIndex": 5
         }
       ],
       "name": "Todas las tablas",

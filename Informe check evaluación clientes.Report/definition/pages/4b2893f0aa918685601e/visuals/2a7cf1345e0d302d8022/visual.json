@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2a7cf1345e0d302d8022",
   "position": {
-    "x": 9.7536945812807883,
-    "y": 86.896551724137936,
+    "x": 9.9575671852899568,
+    "y": 86.9024045261669,
     "z": 6000,
-    "height": 465.51724137931035,
-    "width": 521.37931034482756,
+    "height": 465.2899575671853,
+    "width": 566.67609618104666,
     "tabOrder": 6000
   },
   "visual": {
@@ -17,18 +17,37 @@
           "projections": [
             {
               "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Respuestas vertical"
+                        }
+                      },
+                      "Property": "Orden_bloque"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Sum(Respuestas vertical.Orden_bloque)",
+              "nativeQueryRef": "Bloque1",
+              "displayName": "Bloque"
+            },
+            {
+              "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Orden_bloques"
+                      "Entity": "Respuestas vertical"
                     }
                   },
-                  "Property": "OrdenBloque"
+                  "Property": "Bloque"
                 }
               },
-              "queryRef": "Orden_bloques.OrdenBloque",
-              "nativeQueryRef": "Bloque",
-              "displayName": "Bloque"
+              "queryRef": "Respuestas vertical.Bloque",
+              "nativeQueryRef": "Bloque"
             },
             {
               "field": {
@@ -47,23 +66,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Orden_bloques"
-                  }
-                },
-                "Property": "OrdenBloque"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -468,7 +470,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "119.07698328696927D"
+                  "Value": "87.39329356538536D"
                 }
               }
             }
@@ -478,9 +480,17 @@
           }
         },
         {
-          "properties": {},
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "400.2780889211305D"
+                }
+              }
+            }
+          },
           "selector": {
-            "metadata": "Orden_bloques.OrdenBloque"
+            "metadata": "Respuestas vertical.Bloque"
           }
         }
       ],
