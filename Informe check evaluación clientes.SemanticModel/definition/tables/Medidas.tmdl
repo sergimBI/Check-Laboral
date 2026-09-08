@@ -15,7 +15,10 @@ table Medidas
 	measure 'Puntos obtenidos' = ```
 			
 			    COALESCE (
-			        SUM ( 'Respuestas vertical'[Respuesta] = "No" ),
+			        SUMX (
+			            'Respuestas vertical',
+			            COALESCE ( RELATED ( Puntos[Puntos] ), 0 )
+			        ),
 			        0
 			    )
 			```
@@ -23,10 +26,11 @@ table Medidas
 
 	measure 'Puntos máximos aplicables' =
 			
-			CALCULATE (
-			    COUNTROWS ( 'Respuestas vertical' ),
-			    'Respuestas vertical'[Respuesta] = "Sí" || 'Respuestas vertical'[Respuesta] = "No",
-			    NOT ISBLANK ( 'Respuestas vertical'[Respuesta] )
+			COUNTROWS (
+			    FILTER (
+			        'Respuestas vertical',
+			        NOT ISBLANK ( RELATED ( Puntos[Puntos] ) )
+			    )
 			)
 		formatString: 0
 		lineageTag: ca72f5ec-9747-4845-911c-791d2148748d
