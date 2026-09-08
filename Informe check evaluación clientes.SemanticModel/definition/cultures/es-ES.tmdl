@@ -101,22 +101,6 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "medida.resultado_mostrado": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Resultado mostrado"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "resultado mostrado": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "punto": {
 			      "Definition": {
 			        "Binding": {

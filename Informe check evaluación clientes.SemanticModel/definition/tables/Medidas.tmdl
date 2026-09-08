@@ -35,19 +35,6 @@ table Medidas
 		formatString: 0
 		lineageTag: ca72f5ec-9747-4845-911c-791d2148748d
 
-	measure 'Resultado mostrado' =
-			
-			VAR Aplicabilidad =
-			    SELECTEDVALUE ( 'Detall_Preguntes'[Aplicabilidad] )
-			
-			RETURN
-			    IF (
-			        Aplicabilidad = "No aplica",
-			        "No aplica",
-			        FORMAT ( [Puntos obtenidos], "0" )
-			    )
-		lineageTag: 2a0fa1f1-dfe8-47b6-bb28-f6cd65670b8f
-
 	column Columna1
 		dataType: string
 		lineageTag: f6168f03-fa16-4515-a852-8f933ca8c99e
